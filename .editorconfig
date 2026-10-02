@@ -1,0 +1,6 @@
+root = true
+
+[*]
+max_line_length = 120
+ij_visual_guides = 120
+ij_wrap_on_typing = false

@@ -1,0 +1,17 @@
+[package]
+name = "myrmic-write-cancellation-repro"
+version = "0.1.0"
+edition = "2024"
+authors = ["Amidamaru <thaodt@users.noreply.github.com>"]
+publish = false
+
+# Keep this small reproducer outside Myrmic's large workspace dependency graph.
+[workspace]
+
+[dependencies]
+# Pinned to the exact upstream master commit the finding was verified on.
+# To check the FIXED behavior instead, point this at the fix branch, e.g.:
+#   signal-layer-ipc = { git = "https://github.com/thaodt/myrmic.git", branch = "challenge/client-write-cancellation" }
+signal-layer-ipc = { git = "https://github.com/peeriot/myrmic.git", rev = "841952a" }
+tokio = { version = "1.53.1", features = ["io-util", "macros", "rt", "time"] }
+

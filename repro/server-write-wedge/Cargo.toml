@@ -1,0 +1,16 @@
+[package]
+name = "myrmic-server-write-wedge-repro"
+version = "0.1.0"
+edition = "2024"
+authors = ["Amidamaru <thaodt@users.noreply.github.com>"]
+publish = false
+
+[workspace]
+
+[dependencies]
+# Pinned to the exact upstream master commit the finding was verified on.
+# To check the FIXED behavior instead, point this at the fix branch, e.g.:
+#   signal-layer-ipc = { git = "https://github.com/thaodt/myrmic.git", branch = "challenge/server-write-timeout" }
+signal-layer-ipc = { git = "https://github.com/peeriot/myrmic.git", rev = "841952a" }
+tokio = { version = "1.53.1", features = ["io-util", "macros", "net", "rt", "time"] }
+tempfile = "3"
