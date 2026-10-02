@@ -14,8 +14,8 @@ Three independently reproducible findings, each with its own report:
 
 | # | Finding | Severity | Status |
 |---|---------|----------|--------|
-| A | [Client: cancellation mid-`write_frame` desynchronises the shared connection](findings/A-client-write-cancellation.md) | Medium (robustness) | Repro + failing test + fix (PR) |
-| B | [Server: response write has no timeout → permanent connection-slot wedge](findings/B-server-write-timeout.md) | Medium-High (DoS) | Repro + failing test + fix (PR) |
+| A | [Client: cancellation mid-`write_frame` desynchronises the shared connection](findings/A-client-write-cancellation.md) | Medium (robustness) | Repro + failing test + [fix PR](https://github.com/peeriot/myrmic/pull/30) |
+| B | [Server: response write has no timeout -> permanent connection-slot wedge](findings/B-server-write-timeout.md) | Medium-High (DoS) | Repro + failing test + [fix PR](https://github.com/peeriot/myrmic/pull/31) |
 | C | [Cell isolation defaults contradict the documented guarantees](findings/C-isolation-defaults.md) | Medium | Report + repro steps |
 
 A and B are the same class of defect on opposite sides of one protocol: the **write side of a framed request/response 
